@@ -3,6 +3,6 @@ export const SITE_CONFIG = {
   phone: "+90 537 256 87 56",
   phoneRaw: "905372568756",
   email: "info@hdkguvenlik.com",
-  // Site herkese açık ve canlı durumdadır
-  maintenanceMode: false,
+  // Site yapım aşamasında: true olduğunda ziyaretçiler yapım aşaması sayfasını görür
+  maintenanceMode: true,
 };

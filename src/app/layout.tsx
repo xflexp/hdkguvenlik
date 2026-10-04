@@ -6,6 +6,7 @@ import SourceProtection from "@/components/SourceProtection";
 import CampaignPopup from "@/components/CampaignPopup";
 import AIChatAdvisor from "@/components/AIChatAdvisor";
 import PWAInstaller from "@/components/PWAInstaller";
+import { SITE_CONFIG } from "@/config/site";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -249,8 +250,12 @@ export default function RootLayout({
         {children}
         <ScrollToTop />
         <SourceProtection />
-        <CampaignPopup />
-        <AIChatAdvisor />
+        {!SITE_CONFIG.maintenanceMode && (
+          <>
+            <CampaignPopup />
+            <AIChatAdvisor />
+          </>
+        )}
         <PWAInstaller />
       </body>
     </html>

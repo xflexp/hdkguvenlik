@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import { SITE_CONFIG } from "@/config/site";
+import UnderConstruction from "@/components/UnderConstruction";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
@@ -20,6 +22,10 @@ import QuoteModal, { QuoteData } from "@/components/QuoteModal";
 export default function Home() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quoteData, setQuoteData] = useState<QuoteData | null>(null);
+
+  if (SITE_CONFIG.maintenanceMode) {
+    return <UnderConstruction />;
+  }
 
   const handleOpenQuoteModal = (data: QuoteData) => {
     setQuoteData(data);

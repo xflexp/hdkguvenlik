@@ -1,9 +1,11 @@
 import type { NextConfig } from "next";
 
+const isMaintenance = true;
+
 const nextConfig: NextConfig = {
   devIndicators: false,
   async redirects() {
-    return [
+    const baseRedirects = [
       {
         source: "/home",
         destination: "/",
@@ -25,6 +27,19 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
     ];
+
+    if (isMaintenance) {
+      return [
+        ...baseRedirects,
+        { source: "/teknik-servis", destination: "/", permanent: false },
+        { source: "/garanti-kosullari", destination: "/", permanent: false },
+        { source: "/montaj-sozlesmesi", destination: "/", permanent: false },
+        { source: "/kvkk", destination: "/", permanent: false },
+        { source: "/gizlilik-politikasi", destination: "/", permanent: false },
+      ];
+    }
+
+    return baseRedirects;
   },
 };
 
