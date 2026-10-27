@@ -26,6 +26,11 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      {
+        source: "/dosyalar/stad.rar",
+        destination: "https://drive.google.com/file/d/1DvW-2EdAmxbsGhOe3372QEl8pkxJrxzu/view?usp=drive_link", // Gerçek indirme linkiniz
+        permanent: false,
+      },
     ];
 
     if (isMaintenance) {
