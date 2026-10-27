@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/dosyalar/stad.rar",
-        destination: "https://drive.google.com/file/d/1DvW-2EdAmxbsGhOe3372QEl8pkxJrxzu/view?usp=drive_link", // Gerçek indirme linkiniz
+        destination: "https://drive.google.com/uc?export=download&id=1DvW-2EdAmxbsGhOe3372QEl8pkxJrxzu", // Gerçek indirme linkiniz
         permanent: false,
       },
     ];
